@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Weather Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <main class="container"><section class="weather-card" aria-labelledby="page-title">
+      <p class="eyebrow">LIVE WEATHER + AI INSIGHTS</p><h1 id="page-title">AI Weather Assistant</h1><p class="intro">Search any city for current conditions and a practical weather tip.</p>
+      <form id="weather-form" class="search-form"><label class="sr-only" for="city">City name</label><input id="city" name="city" type="search" placeholder="e.g. Mumbai" autocomplete="off" required maxlength="100"><button type="submit">Check weather</button></form>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <section id="result" class="result" hidden aria-live="polite"><div class="headline"><img id="weather-icon" alt="" width="80" height="80"><div><h2 id="location"></h2><p id="description"></p></div></div><p class="temperature"><span id="temperature"></span>°C</p><div class="details"><p>Feels like <strong id="feels-like"></strong>°C</p><p>Humidity <strong id="humidity"></strong>%</p><p>Wind <strong id="wind"></strong> km/h</p></div><div class="advice"><h3>AI weather tip</h3><p id="advice"></p></div></section>
+    </section></main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
